@@ -26,7 +26,7 @@ window.dom = {
   create(string) {
     const container = document.createElement("template"); //template标签可以容纳任意元素
     container.innerHTML = string.trim();
-    return container.content.firstChild; //template模板获取
+    return container.content.firstChild; //template模板获取，template获取元素必须用content属性
   },
   after(node, node2) {
     node.parentNode.insertBefore(node2, node.nextSibling);
@@ -35,7 +35,7 @@ window.dom = {
     node.parentNode.insertBefore(node2, node); //插入node之前
   },
   append(parent, node) {
-    parent.appendChild(node);
+    parent.appendChild(node);//当文档dom树有所需节点时，直接移过去
   },
   wrap(node, parent) {
     dom.before(node, parent);
