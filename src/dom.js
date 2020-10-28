@@ -3,9 +3,9 @@ window.dom = {
     return (scope || document).querySelectorAll(selector);
   },
   style(node, name, value) {
-    if (arguments.length === 3) {
+    if (arguments.length === 3) { //传入三个参数，设置指定的节点的style样式
       node.style[name] = value;
-    } else if (arguments.length === 2) {
+    } else if (arguments.length === 2) {//传入两个参数，获取指定节点指定样式属性的值
       if (typeof name === "string") {
         return node.style[name];
       } else if (name instanceof Object) {
